@@ -1,6 +1,7 @@
 package com.singleton;
 
 public class Usuario {
+	//Atributos de usuario 
 	String nombre;
 	String colonia;
 	Ventanilla vent;
