@@ -47,24 +47,24 @@
 				</tr>
 				
 				<!-- loop over and print our customers -->
-				<c:forEach var="tempCustomer" items="${customers}">
+				<c:forEach var="tempProduct" items="${products}">
 				
 					<!-- construct an "update" link with customer id -->
 					<c:url var="updateLink" value="/product/showFormForUpdate">
-						<c:param name="customerId" value="${tempCustomer.id}" />
+						<c:param name="productId" value="${tempProduct.id}" />
 					</c:url>					
 
 					<!-- construct an "delete" link with customer id -->
 					<c:url var="deleteLink" value="/product/delete">
-						<c:param name="customerId" value="${tempCustomer.id}" />
+						<c:param name="productId" value="${tempProduct.id}" />
 					</c:url>					
 					
 					<tr>
-						<td> ${tempCustomer.nomProd} </td>
-						<td> ${tempCustomer.categoria} </td>
-						<td> ${tempCustomer.cant} </td>
-						<td> ${tempCustomer.costo} </td>
-						<td> ${tempCustomer.precio} </td>
+						<td> ${tempProduct.nomProd} </td>
+						<td> ${tempProduct.categoria} </td>
+						<td> ${tempProduct.cant} </td>
+						<td>$ ${tempProduct.costo} </td>
+						<td>$ ${tempProduct.precio} </td>
 						
 						<td>
 							<!-- display the update link -->

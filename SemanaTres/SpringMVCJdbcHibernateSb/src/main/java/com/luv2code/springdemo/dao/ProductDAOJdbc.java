@@ -17,21 +17,21 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.entity.Product;
 //import com.luv2code.web.jdbc.Student;
 
 @Repository
-public class CustomerDAOJdbc implements CustomerDAO {
+public class ProductDAOJdbc implements ProductDAO {
 	//Inyectamos DataSource
 	@Autowired
 	DataSource dataSource;
 	
 
 	@Override
-	public List<Customer> getCustomers(){
+	public List<Product> getProducts(){
 		
 		System.out.println("PASO POR DAOJDBC");
-		List<Customer> customers = new ArrayList<>();
+		List<Product> products = new ArrayList<>();
 		
 		// create sql statement
 		String sql = "select * from product order by id";
@@ -52,24 +52,24 @@ public class CustomerDAOJdbc implements CustomerDAO {
 					int precio = myRs.getInt("precio");
 					
 					// create new student object
-					Customer tempCustomer = new Customer(id, nomProd, categ, cant, costo, precio);
+					Product tempProduct = new Product(id, nomProd, categ, cant, costo, precio);
 					
 					// add it to the list of students
-					customers.add(tempCustomer);
+					products.add(tempProduct);
 					
 			}		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return customers;
+		return products;
 	}
 
 	//Método para actualizar o guarfa
 	@Override
-	public void saveCustomer(Customer theCustomer) {
+	public void saveProduct(Product theProduct) {
 		
 		String sql = null;
-		if (theCustomer.getId() == 0){// => UPDATE
+		if (theProduct.getId() == 0){// => UPDATE
 			// create SQL update statement
 			sql = "insert into product "
 					+ "(nom_prod, categ, cantidad, costo, precio) "
@@ -84,14 +84,14 @@ public class CustomerDAOJdbc implements CustomerDAO {
 					PreparedStatement myStmt = myConn.prepareStatement(sql);) { 
 					
 					// set the param values for the product
-					myStmt.setString(1, theCustomer.getNomProd());
-					myStmt.setInt(2, theCustomer.getCategoria());
-					myStmt.setInt(3, theCustomer.getCant());
-					myStmt.setInt(4, theCustomer.getCosto());
-					myStmt.setInt(5, theCustomer.getPrecio());
+					myStmt.setString(1, theProduct.getNomProd());
+					myStmt.setInt(2, theProduct.getCategoria());
+					myStmt.setInt(3, theProduct.getCant());
+					myStmt.setInt(4, theProduct.getCosto());
+					myStmt.setInt(5, theProduct.getPrecio());
 					
-					if(theCustomer.getId() != 0)
-						myStmt.setInt(6, theCustomer.getId());
+					if(theProduct.getId() != 0)
+						myStmt.setInt(6, theProduct.getId());
 					
 					// execute sql insert
 					myStmt.execute();
@@ -101,11 +101,11 @@ public class CustomerDAOJdbc implements CustomerDAO {
 	}
 
 	@Override
-	public Customer getCustomer(int theId) {
-		Customer theCustomer = null;	
+	public Product getProduct(int theId) {
+		Product theProduct = null;	
 		
 		try(Connection myConn = dataSource.getConnection();
-			PreparedStatement myStmt = crearStatementGetCustomer(myConn, theId);) {
+			PreparedStatement myStmt = crearStatementGetProduct(myConn, theId);) {
 			
 			// execute statement
 			ResultSet myRs = myStmt.executeQuery();
@@ -119,7 +119,7 @@ public class CustomerDAOJdbc implements CustomerDAO {
 				int precio = myRs.getInt("precio");
 				
 				// use the studentId during construction
-				theCustomer = new Customer(theId, nomProd, categ, cant, costo, precio);
+				theProduct = new Product(theId, nomProd, categ, cant, costo, precio);
 			}
 			else {
 				System.out.println("Could not find customer id: " + theId);
@@ -128,18 +128,18 @@ public class CustomerDAOJdbc implements CustomerDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return theCustomer;
+		return theProduct;
 	}
 
-	private PreparedStatement crearStatementGetCustomer(Connection myConn, int studentId) throws SQLException {
+	private PreparedStatement crearStatementGetProduct(Connection myConn, int productId) throws SQLException {
 		String sql = "select * from product where id=?";
 		PreparedStatement ps = myConn.prepareStatement(sql);
-		ps.setInt(1, studentId);
+		ps.setInt(1, productId);
 		return ps;
 	}
 	
 	@Override
-	public void deleteCustomer(int theId) {
+	public void deleteProduct(int theId) {
 		// create sql to delete student
 			String sql = "delete from product where id=?";
 				

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="product")
-public class Customer {
+public class Product {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,11 +31,11 @@ public class Customer {
 	@Column(name="precio")
 	private int precio;
 	
-	public Customer() {
+	public Product() {
 		
 	}
 
-	public Customer(int id, String nomProd, int categ, int cant, int costo, int precio) {
+	public Product(int id, String nomProd, int categ, int cant, int costo, int precio) {
 		this.id = id;
 		this.nomProd = nomProd;
 		this.categoria = categ;
@@ -94,7 +94,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", nomProd=" + nomProd + ", categoria=" + categoria + ", cant=" + cant
+		return "Product [id=" + id + ", nomProd=" + nomProd + ", categoria=" + categoria + ", cant=" + cant
 				+ ", costo=" + costo + ", precio=" + precio + "]";
 	}
 

@@ -12,7 +12,7 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/css/add-customer-style.css">
+		  href="${pageContext.request.contextPath}/css/add-product-style.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 	<div id="container">
 		<h3>Guardar Producto</h3>
 	
-		<form:form action="saveProduct" modelAttribute="customer" method="POST">
+		<form:form action="saveProduct" modelAttribute="product" method="POST">
 
 			<!-- need to associate this data with customer id -->
 			<form:hidden path="id" />
