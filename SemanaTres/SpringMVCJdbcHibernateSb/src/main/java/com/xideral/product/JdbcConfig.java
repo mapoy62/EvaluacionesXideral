@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.xideral.product;
 
 import javax.activation.DataSource;
 

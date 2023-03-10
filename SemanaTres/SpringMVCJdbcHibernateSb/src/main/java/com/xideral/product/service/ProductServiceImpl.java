@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.service;
+package com.xideral.product.service;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springdemo.dao.ProductDAO;
-import com.luv2code.springdemo.entity.Product;
+import com.xideral.product.dao.ProductDAO;
+import com.xideral.product.entity.Product;
 
 @Service
 public class ProductServiceImpl implements ProductService {

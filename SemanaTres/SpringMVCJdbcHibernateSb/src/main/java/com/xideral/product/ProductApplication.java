@@ -1,13 +1,13 @@
-package com.luv2code.springdemo;
+package com.xideral.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringdemoApplication {
+public class ProductApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringdemoApplication.class, args);
+		SpringApplication.run(ProductApplication.class, args);
 	}
 
 }

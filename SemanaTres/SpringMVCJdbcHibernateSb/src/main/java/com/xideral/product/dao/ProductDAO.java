@@ -1,11 +1,11 @@
-package com.luv2code.springdemo.service;
+package com.xideral.product.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Product;
+import com.xideral.product.entity.Product;
 
-public interface ProductService {
+public interface ProductDAO {
 
 	public List<Product> getProducts();
 

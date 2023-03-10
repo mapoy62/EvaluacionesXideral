@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.dao;
+package com.xideral.product.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,8 +17,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Product;
-//import com.luv2code.web.jdbc.Student;
+import com.xideral.product.entity.Product;
 
 @Repository
 public class ProductDAOJdbc implements ProductDAO {

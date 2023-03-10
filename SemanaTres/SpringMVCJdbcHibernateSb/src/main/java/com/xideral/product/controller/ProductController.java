@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.controller;
+package com.xideral.product.controller;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.luv2code.springdemo.entity.Product;
-import com.luv2code.springdemo.service.ProductService;
+import com.xideral.product.entity.Product;
+import com.xideral.product.service.ProductService;
 
 @Controller
 @RequestMapping("/product")
