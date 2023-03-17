@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.rest;
+package com.xideral.storeur.rest;
 
 import java.util.List;
 
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springdemo.entity.Compra;
-import com.luv2code.springdemo.entity.Usuario;
-import com.luv2code.springdemo.exception.CustomerNotFoundException;
-import com.luv2code.springdemo.service.CompraService;
-import com.luv2code.springdemo.service.UsuarioService;
+import com.xideral.storeur.entity.Compra;
+import com.xideral.storeur.entity.Usuario;
+import com.xideral.storeur.exception.CustomerNotFoundException;
+import com.xideral.storeur.service.CompraService;
+import com.xideral.storeur.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api")
@@ -40,10 +40,10 @@ public class UsuarioRestController {
 		// add the customers to the model
 		theModel.addAttribute("usuarios", theUsuarios);
 		
-		return "list-customers";
+		return "list-usuarios";
 	}
 	
-	@GetMapping("/showFormForAdd")
+	@GetMapping("/showFormForAddUser")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
@@ -51,7 +51,7 @@ public class UsuarioRestController {
 		
 		theModel.addAttribute("usuario", theUsuario);
 		
-		return "customer-form";
+		return "usuario-form";
 	}
 	
 	@PostMapping("/saveUsuario")
@@ -60,10 +60,10 @@ public class UsuarioRestController {
 		// save the customer using our service
 		usuarioService.saveUsuario(theUsuario);	
 		
-		return "redirect:/customer/list";
+		return "redirect:/usuario/list-usuarios";
 	}
 	
-	@GetMapping("/showFormForUpdate")
+	@GetMapping("/showFormForUpdateUser")
 	public String showFormForUpdate(@RequestParam("usuarioId") int theId,
 									Model theModel) {
 		
@@ -74,16 +74,16 @@ public class UsuarioRestController {
 		theModel.addAttribute("usuario", theUsuario);
 		
 		// send over to our form		
-		return "customer-form";
+		return "usuario-form";
 	}
 	
-	@GetMapping("/delete")
+	@GetMapping("/deleteUser")
 	public String deleteUsuario(@RequestParam("usuarioId") int theId) {
 		
 		// delete the customer
 		usuarioService.deleteUsuario(theId);
 		
-		return "redirect:/customer/list";
+		return "redirect:/usuario/list-usuarios";
 	}
 }
 

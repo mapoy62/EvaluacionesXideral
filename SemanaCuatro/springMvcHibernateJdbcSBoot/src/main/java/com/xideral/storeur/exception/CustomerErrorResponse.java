@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.exception;
+package com.xideral.storeur.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,10 +1,10 @@
-package com.luv2code.springdemo;
+package com.xideral.storeur;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringdemoApplicationTests {
+class StoreurApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.xideral.storeur;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class SpringdemoApplication {
+public class StoreurApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringdemoApplication.class, args);
+		SpringApplication.run(StoreurApplication.class, args);
 	}
 	
 	@Bean

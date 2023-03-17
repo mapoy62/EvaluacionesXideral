@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.rest;
+package com.xideral.storeur.rest;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springdemo.entity.Compra;
-import com.luv2code.springdemo.service.CompraService;
+import com.xideral.storeur.entity.Compra;
+import com.xideral.storeur.service.CompraService;
 
 @Controller
 @RequestMapping("/api/usuarios")
@@ -36,10 +36,10 @@ public class CompraRestController {
 		// add the customers to the model
 		theModel.addAttribute("compras", theCompras);
 		
-		return "list-customers";
+		return "list-compras";
 	}
 	
-	@GetMapping("/showFormForAdd")
+	@GetMapping("/showFormForAddPurch")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
@@ -47,19 +47,19 @@ public class CompraRestController {
 		
 		theModel.addAttribute("compra", theCompra);
 		
-		return "customer-form";
+		return "compra-form";
 	}
 	
-	@PostMapping("/saveCompra")
+	@PostMapping("/savePurch")
 	public String saveCustomer(@ModelAttribute("compra") Compra theCompra) {
 		
 		// save the customer using our service
 		compraService.saveCompra(theCompra);	
 		
-		return "redirect:/customer/list";
+		return "redirect:/compra/list-compras";
 	}
 	
-	@GetMapping("/showFormForUpdate")
+	@GetMapping("/showFormForUpdatePurch")
 	public String showFormForUpdate(@RequestParam("compraId") int theId,
 									Model theModel) {
 		
@@ -70,16 +70,16 @@ public class CompraRestController {
 		theModel.addAttribute("compra", theCompra);
 		
 		// send over to our form		
-		return "customer-form";
+		return "compra-form";
 	}
 	
-	@GetMapping("/delete")
+	@GetMapping("/deletePurch")
 	public String deleteCompra(@RequestParam("compraId") int theId) {
 		
 		// delete the customer
 		compraService.deleteCompra(theId);
 		
-		return "redirect:/customer/list";
+		return "redirect:/compra/list-compras";
 	}
 	
 }

@@ -1,8 +1,8 @@
-package com.luv2code.springdemo.service;
+package com.xideral.storeur.service;
 
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Usuario;
+import com.xideral.storeur.entity.Usuario;
 
 public interface UsuarioService {
 
