@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.exception;
+package com.xideral.storetracker.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

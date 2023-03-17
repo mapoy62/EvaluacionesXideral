@@ -1,10 +1,10 @@
-package com.luv2code.springdemo.service;
+package com.xideral.storetracker.dao;
 
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Compra;
+import com.xideral.storetracker.entity.Compra;
 
-public interface CompraService {
+public interface CompraDAO {
 
 	public List<Compra> getCompras(int theId);
 

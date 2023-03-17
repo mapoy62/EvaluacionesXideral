@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.xideral.storetracker;
 
 import javax.activation.DataSource;
 

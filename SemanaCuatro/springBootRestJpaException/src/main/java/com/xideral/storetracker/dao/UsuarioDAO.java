@@ -1,8 +1,8 @@
-package com.luv2code.springdemo.dao;
+package com.xideral.storetracker.dao;
 
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Usuario;
+import com.xideral.storetracker.entity.Usuario;
 
 public interface UsuarioDAO {
 

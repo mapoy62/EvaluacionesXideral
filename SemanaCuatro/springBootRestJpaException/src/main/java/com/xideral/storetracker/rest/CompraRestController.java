@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.rest;
+package com.xideral.storetracker.rest;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springdemo.entity.Compra;
-import com.luv2code.springdemo.entity.Usuario;
-import com.luv2code.springdemo.exception.CustomerNotFoundException;
-import com.luv2code.springdemo.service.CompraService;
-import com.luv2code.springdemo.service.UsuarioService;
+import com.xideral.storetracker.entity.Compra;
+import com.xideral.storetracker.entity.Usuario;
+import com.xideral.storetracker.exception.CustomerNotFoundException;
+import com.xideral.storetracker.service.CompraService;
+import com.xideral.storetracker.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/usuarios")

@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.xideral.storetracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

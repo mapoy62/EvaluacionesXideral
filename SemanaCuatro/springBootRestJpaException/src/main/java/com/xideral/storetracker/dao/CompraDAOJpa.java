@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.dao;
+package com.xideral.storetracker.dao;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Compra;
-import com.luv2code.springdemo.entity.Usuario;
+import com.xideral.storetracker.entity.Compra;
+import com.xideral.storetracker.entity.Usuario;
 
 @Repository
 public class CompraDAOJpa implements CompraDAO {

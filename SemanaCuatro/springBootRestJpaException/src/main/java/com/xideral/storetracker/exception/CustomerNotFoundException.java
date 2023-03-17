@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.exception;
+package com.xideral.storetracker.exception;
 
 public class CustomerNotFoundException extends RuntimeException {
 	

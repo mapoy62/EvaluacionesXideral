@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.service;
+package com.xideral.storetracker.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springdemo.dao.UsuarioDAO;
-import com.luv2code.springdemo.entity.Usuario;
+import com.xideral.storetracker.dao.UsuarioDAO;
+import com.xideral.storetracker.entity.Usuario;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
